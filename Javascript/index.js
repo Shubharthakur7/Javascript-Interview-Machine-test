@@ -1,3 +1,4 @@
+// javscript basic
 // 1- Reverse a string without using built-in reverse()
 let str = "hello shubham";
 const reverseString = (str1) => {
@@ -68,3 +69,40 @@ const largestSmallestDigit = (arr) => {
     return [largest, smallest];
 }
 console.log(largestSmallestDigit(arr))
+
+// 7- Remove duplicates from an array.
+arr = [1,4,3,1,4,1,3,5,7,0,5,32, -9];
+const removeDuplicates = (arr) => {
+    let r = new Set(arr);
+    return [...r];
+}
+console.log(removeDuplicates(arr))
+
+// 8- Check if two strings are anagrams.
+const isAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) return false;
+  return str1.split('').sort().join('') === str2.split('').sort().join('');
+};
+console.log(isAnagram("listen", "silent"));
+
+// 9- Find the sum of all numbers in an array.
+const sum=(arr) => {
+    let res = arr.reduce((a,c) => a+c);
+    return res;
+}
+console.log(sum([1,3,2]))
+
+// 10- Count occurrences of each element in an array.
+const countOccurance = (arr) => {
+    let obj = {}
+    for(let i=0; i<arr.length; i++) {
+        let r = arr[i];
+        if(obj[r]) {
+           obj[r]=obj[r] +1
+        } else {
+            obj[r]=1
+        }
+    }
+    return obj;
+}
+console.log(countOccurance([1,2,3,1,1,2,2,2]));
