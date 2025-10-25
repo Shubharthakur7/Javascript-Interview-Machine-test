@@ -59,3 +59,28 @@ const sortArr = (arr, el) => {
 }
 
 console.log(sortArr(arr, "name"));
+
+// 4- Group array items by property (e.g. group by “department”). 
+arr=[
+  { name: "Shubham", department: "Engineering" },
+  { name: "Aarya", department: "HR" },
+  { name: "Ravi", department: "Engineering" },
+  { name: "Lokesh", department: "Finance" }
+]
+
+const groupByDept = (arr) => {
+    let results = {};
+    for(let i=0; i<arr.length; i++) {
+        let dept = arr[i]?.department;
+        if(results[dept]) {
+            results[dept] = [...results[dept], arr[i]]
+        } else {
+            results[dept] = [arr[i]]
+        }
+    }
+    return results;
+
+}
+console.log(groupByDept(arr))
+
+// 5- Merge two objects deeply (nested merge)
