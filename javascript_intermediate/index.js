@@ -125,3 +125,14 @@ const removeFalsy = (arr) => {
 }
 const removeFalsy1 = arr => arr.filter((item) => item);
 console.log(removeFalsy1(arr))
+
+// 7-Find missing numbers from a given sequence.
+arr = [1,2,3,4,5,6,7,9,10];
+const missingNumber = (arr) => {
+    let n=arr.length + 1;
+    let nSum = (n * (n+1))/2;
+    let arrSum = arr.reduce((a,c) => a+c);
+    console.log(arrSum, nSum)
+    return nSum - arrSum;
+}
+console.log("sum", missingNumber(arr))
