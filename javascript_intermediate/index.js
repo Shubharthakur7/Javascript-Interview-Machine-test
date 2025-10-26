@@ -84,3 +84,44 @@ const groupByDept = (arr) => {
 console.log(groupByDept(arr))
 
 // 5- Merge two objects deeply (nested merge)
+let obj1 = {
+  name: "Shubham",
+  details: {
+    age: 27,
+    address: { city: "Bangalore", pin: 560070 }
+  }
+}
+
+let obj2 = {
+  details: {
+    age: 28,
+    address: { street: "8th Cross" }
+  },
+  role: "Frontend Developer"
+}
+const deepMerge = (obj1, obj2) => {
+    let results = {...obj1};
+    for(let key in obj2) {
+        if(obj2[key] && typeof obj2[key] === "object" && !Array.isArray(obj2[key])) {
+          results[key] = deepMerge(obj2[key])
+        } else {
+            results[key] = obj2[key];
+        }
+    }
+    return results;
+}
+console.log(deepMerge(obj1, obj2))
+
+// 6 Remove falsy values from an array.
+arr = [0, 1, false, 2, "", 3, null, undefined, "Shubham"]
+const removeFalsy = (arr) => {
+    let results = [];
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i]) {
+            results.push(arr[i])
+        }
+    }
+    return results;
+}
+const removeFalsy1 = arr => arr.filter((item) => item);
+console.log(removeFalsy1(arr))
